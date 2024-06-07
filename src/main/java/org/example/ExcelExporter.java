@@ -37,17 +37,5 @@ public class ExcelExporter {
         }
     }
 
-    public static void saveWorkbook(Workbook workbook, String fileName) {
-        try (FileOutputStream fileOut = new FileOutputStream(fileName)) {
-            workbook.write(fileOut);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                workbook.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+
 }
