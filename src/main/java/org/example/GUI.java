@@ -116,17 +116,7 @@ public class GUI extends JFrame {
         });
     }
 
-    private void initializeDatabaseConnection(String dbPath) {
-        try {
-            Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dbPath);
-            System.out.println("Соединение с базой данных установлено.");
-            // Передайте соединение другим классам, где оно необходимо
-            // ReadDataFromDB.calculateConsumption(conn, reactorHolder);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Не удалось установить соединение с базой данных.", "Ошибка", JOptionPane.ERROR_MESSAGE);
-        }
-    }
+
 
     private void executeCalculation(String message, String outputFileName, CalculationTask task) {
         JFrame progressFrame = createProgressFrame(message);
